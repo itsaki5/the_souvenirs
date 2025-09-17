@@ -1,0 +1,236 @@
+<html>
+	<head>
+		<title>Mô hình My Friend Rabbit - Maid</title>
+		<meta charset= "utf-8" />
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		<link rel= "stylesheet" type= "text/css" href= "../css/style.css" />
+		<link rel= "stylesheet" type= "text/css" href= "../css/rwd.css" />
+		<link rel= "stylesheet" type= "text/css" href= "../css/detail.css" />
+		<meta name= "viewport" content= "width= device-width, initial-scale= 1.0" />
+	</head>
+<!--
+header -> top, banner, menu
+container -> wrapper -> sidebar, slideshow
+footer
+-->	
+	<body>
+	
+<!----------------------HEADER---------------------->	
+		<div id = "header">
+<!--BEGIN TOP & BANNER-->
+			<div id = "top">
+				<div id="top-content" style = "width: 80%; margin: auto">	
+					<div id = "top-left" >							
+						<span><img src= "https://i.imgur.com/sybFkb4.png"/>Hotline: <b>0363.627.792</b> </span>
+						<span><img src= "https://i.imgur.com/fZe4Mke.png" /> Địa chỉ: Ngõ 155, đường Đỗ Thế Diên, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+					</div>	
+
+					<div id = "top-right">							
+						<span><img src= "https://i.imgur.com/3xLVFOO.png" /> <a href= "../login.html"><b>Đăng nhập</b></a></span>
+					</div>	
+				</div>
+			</div>
+
+			<div id = "banner">
+				<div style= "width: 80%; height: 100%; margin: auto; position: relative;">
+					<a href= "../index.html">
+						<div id= "logo">
+							<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> <br />	
+						</div>
+					</a>
+					<a href= "#footer">
+						<div id= "info">
+							<img src= "https://i.imgur.com/1v7x7Bq.png" alt= "info" /> <br />	
+						</div>				
+					</a>
+					<div>
+						<a id= "cart" href= "../cartW.html"><img id= "cart-photo" src= "https://i.imgur.com/1WhvuDO.png"/> Giỏ hàng (0) </a>	
+					</div>
+				</div>
+			</div>		
+<!--END TOP & BANNER-->
+			
+<!--BEGIN MENU-->			
+			<div id = "menu">
+					<div style = "width: 80%; height: 100%; margin: auto">
+						<ul>
+							<li style = "float: left"><a href= "../index.html" style = "background-color: #96FDF1; "> Trang chủ </a></li> <!-- padding: trên dưới-trái phải; trên-phải-dưới-trái-->
+							<li style = "float: left"><a href= "../products.html" > Sản phẩm </a>
+								<ul >
+									<li><a href= "../ca/ca1.html">Gấu bông & Mô hình</a></li>
+									<li><a href= "../ca/ca2.html">Phụ kiện trang trí</a></li>
+									<li><a href= "../ca/ca3.html">Đồ handmade</a></li>									
+									<li><a href= "../ca/ca4.html">Khác</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "../introduction.html"> Giới thiệu </a></li>
+							<li style = "float: left"><a href= "#footer"> Liên hệ </a>
+								<ul>
+									<li><a href= "#footer">Email</a></li>									
+									<li><a href= "#footer">Điện thoại</a></li>
+									<li><a href= "#footer">Fanpage</a></li>
+									<li><a href= "#footer">Facebook</a></li>
+									<li><a href= "#footer">Youtube</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "#">Khuyến mại</a></li>
+						</ul>
+					</div>
+			</div>
+<!--END MENU-->				
+			
+		</div>
+		
+		
+<!----------------------CONTAINER---------------------->		
+		<div id = "container">
+			<div id = "wrapper">
+				<div class= "col-m-12 col-x-12">
+					<div class = "link"> 
+						<h3><a href= "../index.html">Trang chủ</a>/ <a href= "../ca/ca1.html">Gấu bông & Mô hình</a>/ <a href= "../mh.html">Mô hình</a>/<a href= "detail-s1.html"><b>Mô hình My Friend Rabbit - Maid</b></a></h3>
+					</div>	
+				</div>
+<!-- BEGIN DETAIL-->				
+				<div class= "detail">				
+					<div class= "col-m-5 col-x-5">
+						<div id= "detail-photo">
+							<img class= "detail-img" src= "https://i.imgur.com/E91Tcuo.jpeg" />
+						</div>
+					</div>
+					
+					<div class= "col-m-7 col-x-7">
+						<div id= "detail-info">
+							<div class= "detail-name">
+								<h6>Sale</h6>
+								<h1>Mô hình My Friend Rabbit - Maid</h1>
+							</div>
+							<span class= "detail-status">Còn hàng</span> <br />
+							<span class= "detail-sale">150.000 VND </span> <br />
+							<span class= "detail-price">Giá gốc: <s> 180.000 VND</s></span> <br /><br />
+							<span class= "detail-origin">Xuất xứ: Nhật Bản</span> <br /><br />
+							
+							<div id= "order">
+								<span class= "detail-size">Kích thước</span> <br />
+								<input class= "size" type= "radio" name="size" value= "default"/>Mặc định <br /><br />
+								
+								<span class= "detail-num">Số lượng </span>
+								<input class= "detail-num" type= "number" min= "1" value= "1" id= "num" required /><br />
+								
+								<input class= "detail-btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class= "detail">																	
+					<div class="col-m-12 col-x-12">
+						<h1 id= "des">MÔ TẢ SẢN PHẨM</h1>
+					
+						<div id= "detail-table">						
+							<table border = "1" cellspacing = "0" cellpadding = "5">
+								<tr>
+									<th style="width: 400px;">THÔNG TIN</th>
+									<th>MÔ TẢ CHI TIẾT</th>
+								</tr>
+								<tr>
+									<td>Tên hàng hóa</td>
+									<td>GẤU BÔNG</td>
+								</tr>
+								<tr>
+									<td>Thành phần</td>
+									<td>VẢI NHUNG, VẢI 4 CHIỀU CO GIÃN </td>
+								</tr>
+								<tr>
+									<td>Thông số kỹ thuật</td>
+									<td>BÊN NGOÀI VẢI NHUNG 4 CHIỀU, TRONG NHỒI BÔNG GÒN BI</td>
+								</tr>
+								<tr>
+									<td>Hướng dẫn sử dụng</td>
+									<td>GIẶT MÁY VÀ GIẶT TAY ĐỀU ĐƯỢC</td>
+								</tr>
+								<tr>
+									<td>Thông tin cảnh báo</td>
+									<td>DÙNG CHO TRẺ TỪ 1 TUỔI </td>
+								</tr>
+								<tr>
+									<td>Hướng dẫn bảo quản</td>
+									<td>BẢO QUẢN NƠI THOÁNG MÁT</td>
+								</tr>
+								<tr>
+									<td>Năm sản xuất</td>
+									<td>2024</td>
+								</tr>
+								<tr>
+									<td>Hạn sử dụng</td>
+									<td>Không có</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					
+					<div class="col-m-12 col-x-12">	
+						<div id= "detail-describe">
+							<p>
+							Màu sắc: như hình <br />
+							Kích thước: 30x40cm; 50x60cm; 70x80cm <br />
+							Chiều cao thực tế hao hụt khi nhồi bông gòn <br />
+							Nhồi 100% gòn, 100% ảnh thật <br />
+							Hàng khi gửi đều được hút chân không và đóng gói cẩn thận, giúp giảm bớt chi phí vận chuyển cho khách hàng <br />
+							Lông nhung mềm mịn, nhằm mang lại trải nghiệm tuyệt vời và sự tin tưởng cho khách hàng <br />
+							Hàng có sẵn, chuyên bỏ sỉ cho các shop <br />
+							</p>
+						</div>
+					</div>
+				</div>
+<!--END DETAIL-->				
+
+<!--VỀ ĐẦU TRANG $V LIÊN HỆ-->
+				<div id= "back-top" title= "Về đầu trang">
+					<a href= "#top"> 
+						<img src= "https://i.imgur.com/YqSs2Rc.png" />
+					</a>				
+				</div>	
+				
+				<div id= "mess" title= "Liên hệ với chúng tôi qua Messenger!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/P0d8iOS.png" />
+					</a>				
+				</div>	
+				
+				<div id= "zalo" title= "Liên hệ với chúng tôi qua Zalo!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/0EnRJ4U.png" />
+					</a>				
+				</div>	
+				
+				<div id= "fb" title= "Liên hệ với chúng tôi qua Facebook!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/hgLqXpI.png" />
+					</a>				
+				</div>	
+				
+			</div><!--đóng wrapper-->
+		</div>
+		
+		
+<!----------------------FOOTER---------------------->
+		<div id= "footer">
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-info">
+					<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>					
+					<h3>Địa chỉ: Ngõ 155, Mỹ Hào 1, Mỹ Hào, Hưng Yên</h3>
+					<h3>Email: thesouvenirs@gmail.com</h3>
+					<h3>Điện thoại: 0363.627.792</h3>
+					<h3>Website: thesouvenirs.html</h3>
+					<h3>Fanpage: The Souvenirs</h3>
+					<h3>Youtube: The Souvenirs</h3>				
+				</div>
+			</div>
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-map"> 
+					<iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5627127100296!2d106.074047!3d20.942439!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2sus!4v1744664275551!5m2!1svi!2sus" style= "border: 0px; width: 100%; height: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

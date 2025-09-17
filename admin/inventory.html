@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Kho hàng-Quản trị The Souvenirs</title>
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		
+		<!-- Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+		<link rel="stylesheet" href="style-admin.css">
+				
+	</head>
+
+	<body>	
+		<div class="container"> <!--Grid 12 cột -->				
+			
+<!-------------BEGIN SIDEBAR------------->			
+			<div class="sidebar col-3"> <!--Chiếm 3 cột, ẩn trên mobile -->
+				<div class="logo">
+					<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> 
+				</div>
+				
+				<nav>
+					<a href="admin.html" class="menu-item" style= "background-color: #81D8D0; "><i class="fas fa-home"></i> Tổng quan</a>
+					<a href="product.html" class="menu-item"><i class="fas fa-shopping-cart"></i> Sản phẩm</a>
+					<a href="order.html" class="menu-item"><i class="fas fa-file"></i> Đơn hàng</a>
+					<a href="inventory.html" class="menu-item active"><i class="fas fa-box"></i>Kho hàng</a>
+				</nav>
+
+			</div>
+<!-------------END SIDEBAR------------->			
+			
+			<div class="main col-9"> <!--Chiếm 9 cột trên desktop, full trên mobile -->
+
+<!-------------BEGIN HEADER------------->				
+				<div class="header">					
+					<div class="flex header-left">
+						<button class="btnExtend"><i class="fas fa-bars"></i></button>
+						<div class="page-title">KHO HÀNG</div>
+					</div>
+					
+					<div class="header-right">
+						<button class="btnSearch" title= "Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+						
+						<input class="search" type="text" placeholder="Tìm kiếm..." />
+						
+						<div class="notification">
+							<i class="fas fa-bell"></i>
+							<span class="badge">3</span>
+						</div>
+					</div>
+				</div>
+<!-------------END HEADER------------->	
+
+				<div class="card table-card">
+					<h2>Quản lý Kho hàng</h2>
+					
+					<button class="btn-add"><i class="fas fa-plus"></i> Thêm sản phẩm</button>
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Sản phẩm</th>
+								<th>Số lượng</th>
+								<th>Hành động</th>
+							</tr>
+						</thead>
+						
+						<tbody id="inventory-table-body">
+							<!--Kho hàng -->
+							
+							
+							
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

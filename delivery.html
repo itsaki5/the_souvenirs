@@ -1,0 +1,194 @@
+<html>
+	<head>
+		<title>Đặt hàng-The Souvenirs</title>
+		<meta charset= "utf-8" />
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		<link rel= "stylesheet" type= "text/css" href= "css/style.css" />
+		<link rel= "stylesheet" type= "text/css" href= "css/delivery.css" />
+		<link rel= "stylesheet" type= "text/css" href= "css/rwd.css" />
+		<meta name= "viewport" content= "width= device-width, initial-scale= 1.0" />
+	
+		<script src= "delivery.js"></script>
+		
+	</head>
+<!--
+header -> top, banner, menu
+container -> wrapper -> sidebar, slideshow
+footer
+-->	
+	<body>
+	
+<!----------------------HEADER---------------------->
+		<div id = "header">
+<!--BEGIN TOP & BANNER-->
+			<div id = "top">
+				<div id="top-content" style = "width: 80%; margin: auto">	
+					<div "col-m-10 col-x-10"> 
+						<div id = "top-left" >							
+							<span><img src= "https://i.imgur.com/sybFkb4.png"/>Hotline: <b>0363.627.792</b> </span>
+							<span><img src= "https://i.imgur.com/fZe4Mke.png" /> Địa chỉ: Ngõ 155, đường Đỗ Thế Diên, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+						</div>	
+					</div>
+					<div "col-m-3 col-x-3"> 
+						<div id = "top-right">							
+							<span><img src= "https://i.imgur.com/3xLVFOO.png" /> <a href= "login.html"><b>Đăng nhập</b></a></span>
+						</div>	
+					</div>	
+				</div>
+			</div>
+
+			<div id = "banner">
+				<div style= "width: 80%; height: 100%; margin: auto; position: relative;">
+					<a href= "index.html">
+						<div id= "logo">
+							<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> <br />	
+						</div>
+					</a>
+					<a href= "#footer">
+						<div id= "info">
+							<img src= "https://i.imgur.com/1v7x7Bq.png" alt= "info" /> <br />	
+						</div>				
+					</a>
+					<div "col-m-2 col-x-2">
+						<a id= "cart" href= "cartW.html"><img id= "cart-photo" src= "https://i.imgur.com/1WhvuDO.png"/> Giỏ hàng (0) </a>	
+					</div>
+				</div>
+			</div>			
+<!--END TOP & BANNER-->
+			
+<!--BEGIN MENU-->			
+			<div id = "menu">
+					<div style = "width: 80%; height: 100%; margin: auto">
+						<ul>
+							<li style = "float: left"><a href= "index.html" style = "background-color: #96FDF1; "> Trang chủ </a></li> <!-- padding: trên dưới-trái phải; trên-phải-dưới-trái-->
+							<li style = "float: left"><a href= "products.html" > Sản phẩm </a>
+								<ul >
+									<li><a href= "ca/ca1.html">Gấu bông & Mô hình</a></li>
+									<li><a href= "ca/ca2.html">Phụ kiện trang trí</a></li>
+									<li><a href= "ca/ca3.html">Đồ handmade</a></li>									
+									<li><a href= "ca/ca4.html">Khác</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "introduction.html"> Giới thiệu </a></li>
+							<li style = "float: left"><a href= "#footer"> Liên hệ </a>
+								<ul>
+									<li><a href= "#footer">Email</a></li>									
+									<li><a href= "#footer">Điện thoại</a></li>
+									<li><a href= "#footer">Fanpage</a></li>
+									<li><a href= "#footer">Facebook</a></li>
+									<li><a href= "#footer">Youtube</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "#">Khuyến mại</a></li>
+						</ul>
+					</div>
+			</div>
+<!--END MENU-->							
+		</div>
+		
+		
+<!----------------------CONTAINER---------------------->		
+		<div id = "container">
+			<div id = "wrapper">
+				<div class= "col-s-12 col-m-12 col-x-6">
+					<div class= "box">
+						<h1>DANH SÁCH SẢN PHẨM</h1>
+						
+						<div id= "confirm-order">
+							<img id= "order-image" src=""> <br />
+							<p id= "order-quantity"></p>
+							<p id= "order-total"></p>
+							<p id= "total-bill"></p>							
+						</div>
+					</div>
+				</div>
+				
+				<div class= "col-s-12 col-m-12 col-x-6">			
+					<div class= "box">
+						<h1>THÔNG TIN NHẬN HÀNG</h1>
+						
+						<form id= "login-data">
+							<div class= "form-group">
+								<input type= "text" id= "receiver" placeholder= "Tên người nhận hàng" required>
+							</div>
+							<div class= "form-group">
+								<input type= "tel" id= "phone" placeholder= "Số điện thoại người nhận" required>
+							</div>
+							
+							<div class= "form-group">
+								<input type= "text" id= "address" placeholder= "Địa chỉ nhận hàng" required>
+							</div>	
+							<div class="form-group">
+								<select class= "address-select" id= "commune" name="communes">
+									<option data-code="null">Xã/ Phường</option>
+									<option data-code="HC" selected="">Nhân Hòa</option>
+									<option data-code="HI" >Dị Sử</option>
+									<option data-code="HY">Bần Yên Nhân</option>															
+								</select>
+							</div>
+							
+							<div class= "form-group">
+								<select class= "address-select" id= "province" name= "province">
+									<option data-code="null">Tỉnh/ Thành phố</option>
+									<option data-code="HC">Hồ Chí Minh</option>
+									<option data-code="HI">Hà Nội</option>
+									<option data-code="HY" selected="">Hưng Yên</option>															
+								</select>
+							</div>
+																											
+							<button type= "submit" id= "btnConfirm-order">Đặt hàng</button>
+						</form>
+						
+					</div>	
+				</div>	
+
+<!--VỀ ĐẦU TRANG $ LIÊN HỆ-->
+				<div id= "back-top" title= "Về đầu trang">
+					<a href= "#top"> 
+						<img src= "https://i.imgur.com/YqSs2Rc.png" />
+					</a>				
+				</div>	
+				
+				<div id= "mess" title= "Liên hệ với chúng tôi qua Messenger!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/P0d8iOS.png" />
+					</a>				
+				</div>	
+				
+				<div id= "zalo" title= "Liên hệ với chúng tôi qua Zalo!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/0EnRJ4U.png" />
+					</a>				
+				</div>	
+				
+				<div id= "fb" title= "Liên hệ với chúng tôi qua Facebook!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/hgLqXpI.png" />
+					</a>				
+				</div>
+			
+			</div> <!--đóng wrapper-->
+		</div>
+		
+		
+<!----------------------FOOTER---------------------->
+		<div id= "footer">
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-info">
+					<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>					
+					<h3>Địa chỉ: Ngõ 155, Mỹ Hào 1, Mỹ Hào, Hưng Yên</h3>
+					<h3>Email: thesouvenirs@gmail.com</h3>
+					<h3>Điện thoại: 0363.627.792</h3>
+					<h3>Website: thesouvenirs.html</h3>
+					<h3>Fanpage: The Souvenirs</h3>
+					<h3>Youtube: The Souvenirs</h3>				
+				</div>
+			</div>
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-map"> 
+					<iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5627127100296!2d106.074047!3d20.942439!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2sus!4v1744664275551!5m2!1svi!2sus" style= "border: 0px; width: 100%; height: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Quản trị The Souvenirs</title>
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		
+		<!-- Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+		<link rel="stylesheet" href="style-admin.css">
+				
+	</head>
+
+	<body>	
+		<div class="container"> <!--Grid 12 cột -->				
+			
+<!-------------BEGIN SIDEBAR------------->			
+			<div class="sidebar col-3"> <!--Chiếm 3 cột, ẩn trên mobile -->
+				<div class="logo">
+					<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> 
+				</div>
+				
+				<nav>
+					<a href="admin.html" class="menu-item  active" style= "background-color: #81D8D0; "><i class="fas fa-home"></i> Tổng quan</a>
+					<a href="product.html" class="menu-item"><i class="fas fa-shopping-cart"></i> Sản phẩm</a>
+					<a href="order.html" class="menu-item"><i class="fas fa-file"></i> Đơn hàng</a>
+					<a href="inventory.html" class="menu-item"><i class="fas fa-box"></i>Kho hàng</a>
+				</nav>
+												
+				<div class="logout">
+					<span> 
+						<i class="fa-solid fa-arrow-left"></i>
+						<a href="#" id="btnLogout"><b>Đăng xuất</b></a>
+					</span>
+				</div>
+				
+				<script>
+					document.getElementById("btnLogout").addEventListener("click", function(e) {
+					e.preventDefault(); 
+					localStorage.removeItem("isLoggedIn");
+					alert("Đã đăng xuất!");
+					window.location.href = "../login.html";
+				});
+				</script>
+			</div>
+<!-------------END SIDEBAR------------->			
+			
+			<div class="main col-9"> <!--Chiếm 9 cột trên desktop, full trên mobile -->
+
+<!-------------BEGIN HEADER------------->				
+				<div class="header">					
+					<div class="flex header-left">
+						<button class="btnExtend"><i class="fas fa-bars"></i></button>
+						<div class="page-title">TỔNG QUAN</div>
+					</div>
+					
+					<div class="header-right">
+						<button class="btnSearch" title= "Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+						
+						<input class="search" type="text" placeholder="Tìm kiếm..." />
+						
+						<div class="notification">
+							<i class="fas fa-bell"></i>
+							<span class="badge">3</span>
+						</div>
+					</div>
+				</div>
+<!-------------END HEADER------------->	
+
+<!-------------BEGIN SUMMARY------------->	
+				<div class="smr">
+					<div class="card col-4">
+						<img src= "https://i.imgur.com/o124bfu.png" alt="Doanh thu tháng">
+						
+						<div class="card-content">
+							<h3>Doanh thu tháng</h3>
+							<p class="revenue">0 VND</p>
+						</div>
+					</div>
+					
+					<div class="card col-4">
+						<img src= "https://i.imgur.com/pjjiGSw.png" alt="Đơn hàng đang xử lý">
+						
+						<div class="card-content">
+							<h3>Đơn hàng đang xử lý</h3>
+							<p class= "count">1</p>
+						</div>
+					</div>
+					
+					<div class="card col-4">
+						<img src= "https://i.imgur.com/12mnlHX.png" alt="SP bán chạy">
+						
+						<div>
+							<h3>Sản phẩm bán chạy tháng</h3>
+							<p>Gấu bông Sanrio - Cinnamoroll</p>
+						</div>
+					</div>
+				</div>
+<!-------------END SUMMARY------------->	
+
+<!-------------BEGIN TABLE------------->	
+				<div class="card table-card">
+					<h2>Đơn hàng gần đây</h2>
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Mã đơn</th>
+								<th>Khách hàng</th>
+								<th>Tổng tiền</th>
+								<th>Trạng thái</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<!--Đơn hàng-->
+							
+							
+							
+						</tbody>						
+					</table>
+				</div>
+<!-------------END TABLE------------->	
+
+			</div> <!--đóng main-->
+			
+			<script src="admin-order.js"></script>
+
+		</div>
+	</body>
+</html>

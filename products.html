@@ -1,0 +1,427 @@
+<html>
+	<head>
+		<title>Sản phẩm-The Souvenirs</title>
+		<meta charset= "utf-8" />
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		<link rel= "stylesheet" type= "text/css" href= "css/style.css" />
+		<link rel= "stylesheet" type= "text/css" href= "css/rwd.css" />
+		<meta name= "viewport" content= "width= device-width, initial-scale= 1.0" />
+	
+		<script src= "jquery-3.7.1.min.js"> </script>
+		<script src= "cartW.js"></script>
+		<script src= "admin/addProduct.js"></script>
+				
+	</head>
+<!--
+header -> top, banner, menu
+container -> wrapper -> sidebar, slideshow
+footer
+-->	
+
+	<body>
+	
+<!----------------------HEADER---------------------->	
+		<div id = "header">
+<!--BEGIN TOP & BANNER-->
+			<div id = "top">
+				<div id="top-content" style = "width: 80%; margin: auto">	
+					<div id = "top-left" >							
+						<span><img src= "https://i.imgur.com/sybFkb4.png"/>Hotline: <b>0363.627.792</b> </span>
+						<span><img src= "https://i.imgur.com/fZe4Mke.png" /> Địa chỉ: Ngõ 155, đường Đỗ Thế Diên, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+					</div>	
+
+					<div id = "top-right">							
+						<span><img src= "https://i.imgur.com/3xLVFOO.png" /> <a href= "login.html"><b>Đăng nhập</b></a></span>
+					</div>	
+
+				</div>
+			</div>
+
+			<div id = "banner">
+				<div style= "width: 80%; height: 100%; margin: auto; position: relative;">
+					<a href= "index.html">
+						<div id= "logo">
+							<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> <br />	
+						</div>
+					</a>
+					<a href= "#footer">
+						<div id= "info">
+							<img src= "https://i.imgur.com/1v7x7Bq.png" alt= "info" /> <br />	
+						</div>				
+					</a>
+					<div>
+						<a id= "cart" href= "cartW.html"><img id= "cart-photo" src= "https://i.imgur.com/1WhvuDO.png"/> Giỏ hàng (0) </a>	
+					</div>
+				</div>
+			</div>			
+<!--END TOP & BANNER-->
+			
+<!--BEGIN MENU-->			
+			<div id = "menu">
+					<div style = "width: 80%; height: 100%; margin: auto">
+						<ul>
+							<li style = "float: left"><a href= "index.html" style = "background-color: #96FDF1; "> Trang chủ </a></li> <!-- padding: trên dưới-trái phải; trên-phải-dưới-trái-->
+							<li style = "float: left"><a href= "products.html" > Sản phẩm </a>
+								<ul >
+									<li><a href= "ca/ca1.html">Gấu bông & Mô hình</a></li>
+									<li><a href= "ca/ca2.html">Phụ kiện trang trí</a></li>
+									<li><a href= "ca/ca3.html">Đồ handmade</a></li>									
+									<li><a href= "ca/ca4.html">Khác</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "introduction.html"> Giới thiệu </a></li>
+							<li style = "float: left"><a href= "#footer"> Liên hệ </a>
+								<ul>
+									<li><a href= "#footer">Email</a></li>									
+									<li><a href= "#footer">Điện thoại</a></li>
+									<li><a href= "#footer">Fanpage</a></li>
+									<li><a href= "#footer">Facebook</a></li>
+									<li><a href= "#footer">Youtube</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "#">Khuyến mại</a></li>
+						</ul>
+					</div>
+			</div>
+<!--END MENU-->				
+			
+		</div>
+		
+		
+<!----------------------CONTAINER---------------------->		
+		<div id = "container">
+			<div id = "wrapper">
+				
+				<div class= "col-m-12 col-x-12">
+					<div class = "link"> 
+						<h3><a href= "index.html">Trang chủ</a>/ <a href= "products.html"><b>Sản phẩm</b></a></h3>
+					</div>	
+				</div>
+				
+<!--BEGIN PRODUCTS-->	
+				
+				<div class= "col-m-12 col-x-12">
+					<div class= "cates">
+						<a href= "#"><h1 id= "ca1">TẤT CẢ SẢN PHẨM</h1></a>
+						<div class = "products">
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "detail/detail-b1.html"><img class= "product-photo" src= "https://i.imgur.com/yR5NSRL.jpeg" /></a> <br />
+									<a href= "detail/detail-b1.html"><span class= "product-name">Gấu bông Sanrio - Cinnamoroll</span></a> <br />
+									<span class= "product-sale">90.000 VND</span> <br />
+									<span class= "product-price"><s>100.000 VND</s></span> <br />  
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "detail/detail-b2.html"><img class= "product-photo" src= "https://i.imgur.com/IBZmSDE.jpeg" /></a> <br />
+									<a href= "detail/detail-b2.html"><span class= "product-name">Gấu bông Sanrio - Pompompurin</span></a> <br />
+									<span class= "product-sale">90.000 VND</span> <br />
+									<span class= "product-price"><s>100.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "detail/detail-s1.html"><img class= "product-photo" src= "https://i.imgur.com/E91Tcuo.jpeg" /></a> <br />
+									<a href= "detail/detail-s1.html"><span class= "product-name">Mô hình My Friend Rabbit - Maid</span></a> <br />
+									<span class= "product-sale">150.000 VND</span> <br />
+									<span class= "product-price"><s>180.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "detail/detail-s6.html"><img class= "product-photo" src= "https://i.imgur.com/AbzZzAM.jpeg" /></a> <br />
+									<a href= "detail/detail-s6.html"><span class= "product-name">Mô hình Hirono - The Other One</span></a> <br />
+									<span class= "product-sale">290.000 VND</span> <br />
+									<span class= "product-price"><s>350.000 VND</s></span> <br />
+								
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									
+								</div>
+							</div>												
+						</div>
+
+						<div class = "products" >
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/IEQGXep.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Hoa len - Tulip</span></a> <br />
+									<span class= "product-sale">20.000 VND</span> <br />
+									<span class= "product-price"><s>25.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/sI185Mz.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Hoa len - Hướng dương</span></a> <br />
+									<span class= "product-sale">23.000 VND</span> <br />
+									<span class= "product-price"><s>25.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/fRYnVzD.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Vòng tay Mini Flower xanh ngọc</span></a> <br />
+									<span class= "product-sale">45.000 VND</span> <br />
+									<span class= "product-price"><s>50.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/hSn4jnc.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Vòng tay Candy Crush</span></a> <br />
+									<span class= "product-sale">45.000 VND</span> <br />
+									<span class= "product-price"><s>50.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>												
+						</div>
+					
+						<div class= "products" >
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/DVgJJMi.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Toploader Butterfly Garden</span></a> <br />
+									<span class= "product-sale">30.000 VND</span> <br />
+									<span class= "product-price"><s>25.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/bbFI46h.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Toploader Sweetly Dream</span></a> <br />
+									<span class= "product-sale">33.000 VND</span> <br />
+									<span class= "product-price"><s>26.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/bd9Eqkx.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Toploader Blink Dream</span></a> <br />
+									<span class= "product-sale">34.000 VND</span> <br />
+									<span class= "product-price"><s>30.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/el0auxw.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Toploader Christmas Time</span></a> <br />
+									<span class= "product-sale">27.000 VND</span> <br />
+									<span class= "product-price"><s>23.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>												
+						</div>
+					
+						<div class= "products" >
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/DJtLcqO.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Chuông gió phong cách Nhật Bản</span></a> <br />
+									<span class= "product-sale">60.000 VND</span> <br />
+									<span class= "product-price"><s>90.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/KtsGkvk.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Pin cài áo hoạt hình ếch xanh</span></a> <br />
+									<span class= "product-sale">15.000 VND</span> <br />
+									<span class= "product-price"><s>20.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/4d5PpnR.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Búp bê cầu may Daruma</span></a> <br />
+									<span class= "product-sale">99.000 VND</span> <br />
+									<span class= "product-price"><s>150.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>
+							
+							<div class= "col-s-6 col-m-4 col-x-3">
+								<div class= "product">
+									<a href= "#"><img class="product-photo" src= "https://i.imgur.com/wnZ4Wue.jpeg" /></a> <br />
+									<a href= "#"><span class= "product-name">Pin cài áo hoạt hình chó vàng</span></a> <br />
+									<span class= "product-sale">10.000 VND</span> <br />
+									<span class= "product-price"><s>15.000 VND</s></span> <br />
+									
+									<input class= "btnAdd" type= "button" value= "Thêm vào giỏ hàng" />
+									 
+								</div>
+							</div>												
+						</div>
+						
+						<div class="products" id="product-list">
+							
+							
+							
+							
+						</div>
+					</div>	
+				</div>
+				
+				<script>
+							// Hàm tạo phần tử sản phẩm
+							function createProductElement(product) {
+								const div = document.createElement("div");
+								div.className = "col-s-6 col-m-4 col-x-3";
+
+								div.innerHTML = `
+									<div class="product">
+										<a href="#"><img class="product-photo" src="${product.image}" /></a><br />
+										<a href="#"><span class="product-name">${product.name}</span></a><br />
+										<span class="product-sale">${product.price} VND</span><br />
+										<span class="product-price"><s>${parseInt(product.price) + 10000} VND</s></span><br />
+										<input class="btnAdd" type="button" value="Thêm vào giỏ hàng" />
+									</div>
+								`;
+
+
+								return div;
+							}
+
+							// Hàm load sản phẩm từ localStorage
+							function loadProducts() {
+								const productList = document.getElementById("product-list");
+
+								// Lấy danh sách sản phẩm từ localStorage
+								const products = JSON.parse(localStorage.getItem("products")) || [];
+
+								// Xóa hết sản phẩm cũ trong danh sách
+								productList.innerHTML = '';
+
+								// Duyệt qua danh sách sản phẩm và tạo phần tử cho từng sản phẩm
+								products.forEach(product => {
+									const productElement = createProductElement(product);
+									productList.appendChild(productElement);
+								});
+							}
+
+							// Hiển thị sản phẩm khi trang tải
+							document.addEventListener("DOMContentLoaded", function () {
+								loadProducts();
+							}); 
+						</script>
+				
+<!--END PRODUCTS-->
+
+<!--VỀ ĐẦU TRANG $V LIÊN HỆ-->
+				<div id= "back-top" title= "Về đầu trang">
+					<a href= "#top"> 
+						<img src= "https://i.imgur.com/YqSs2Rc.png" />
+					</a>				
+				</div>	
+				
+				<div id= "mess" title= "Liên hệ với chúng tôi qua Messenger!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/P0d8iOS.png" />
+					</a>				
+				</div>	
+				
+				<div id= "zalo" title= "Liên hệ với chúng tôi qua Zalo!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/0EnRJ4U.png" />
+					</a>				
+				</div>	
+				
+				<div id= "fb" title= "Liên hệ với chúng tôi qua Facebook!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/hgLqXpI.png" />
+					</a>				
+				</div>				
+				
+			</div> <!--đóng wrapper-->
+		</div>
+		
+
+<!----------------------FOOTER---------------------->
+		<div id= "footer">
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-info">
+					<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>					
+					<h3>Địa chỉ: Ngõ 155, Mỹ Hào 1, Mỹ Hào, Hưng Yên</h3>
+					<h3>Email: thesouvenirs@gmail.com</h3>
+					<h3>Điện thoại: 0363.627.792</h3>
+					<h3>Website: thesouvenirs.html</h3>
+					<h3>Fanpage: The Souvenirs</h3>
+					<h3>Youtube: The Souvenirs</h3>				
+				</div>
+			</div>
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-map"> 
+					<iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5627127100296!2d106.074047!3d20.942439!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2sus!4v1744664275551!5m2!1svi!2sus" style= "border: 0px; width: 100%; height: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+		
+<!----------------------PREVIEW PRODUCT---------------------->		
+		<div id= "product-preview" class= "modal">
+			<div class= "modal-content">
+				<span class= "close">&times;</span> <!--Close-->
+				
+				<img id= "preview-image" src=""> <br />
+				<h3 id=	"preview-name"></h3>
+				<p id= "preview-sale"></p>
+				<p id= "preview-price"></p>
+				
+				<label for= "preview-num" class= "num">Số lượng:  </label>
+				<input id= "preview-num" type= "number" min= "1" value= "1" required /><br><br>
+				
+				<button id= "confirm-add">Thêm vào giỏ hàng</button>
+			</div>
+		</div>
+		
+	</body>
+</html>

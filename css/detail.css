@@ -1,0 +1,147 @@
+.detail{
+width: 100%;
+min-height: 530px;
+margin-bottom: 15px;
+background-color: #F7F7F7;
+border: 1px solid #F7F7F7;	
+border-radius: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+/*----------------TOP----------------*/
+#detail-photo{
+width: 100%;
+height: 500px;	
+}
+.detail-img{
+width: 100%;
+height: 100%;
+object-fit: cover; /*img fit div*/
+border-radius: 10px;
+margin: auto;
+}
+#detail-info{
+height: 500px;
+position: relative;
+}
+.detail-name{
+font-size: 14pt;
+color: #0F2F76;	
+}
+.detail-name h1{ 
+margin: 0px;
+}
+.detail-name h6{ /*tag sale*/
+width: 40px;
+line-height: 20px;
+color: white;
+text-align: center;
+float: right;
+margin: 0px;
+display: block;
+border-radius: 5px;
+background-color: red;
+}
+.detail-status{
+width: 100px;
+line-height: 30px;
+text-align: center;
+display: block;
+border-radius: 5px;
+background-color: #67f099;	
+}
+.detail-sale{
+font-size: 20pt;
+color: #DD6734;
+font-weight: bold;
+}
+.detail-price{
+color: #CCC; 
+font-size: 14pt; 
+}
+.detail-origin{
+color: #0F2F76;
+font-size: 13pt; 
+}
+
+#order{ 	/*div order*/
+width: 100%;
+height: 45%;
+padding: 20px 0;
+color: #0F2F76; 
+position: absolute;
+bottom: 50px;
+font-size: 14pt; 
+border-top: 1px solid #BFBFBF;
+}
+.detail-size, .detail-num{
+color: #0F2F76; 
+font-size: 15pt; 
+margin-top: 10px;
+}
+.size{
+font-size: 15pt; 
+width: 100px;
+margin: 10px 0;	
+}
+
+input{
+width: 100px;
+line-height: 36px; 
+font-size: 15pt;
+border: none;
+color: #0F2F76;
+background-color: #F0F0F0;
+border-radius: 5px;
+text-align: center;
+}
+input:hover{
+background-color: #F2F3F5;
+box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.detail-btnAdd{
+height: 50px;
+width: 200px;
+font-size: 14pt;
+margin: 20px 5px;
+color: #0F2F76;
+background-color: #81D8D0;
+border-color: #81D8D0;
+border-radius: 10px;
+}
+.detail-btnAdd:hover{
+color: white;
+background-color: #DD6734;
+border-color: #DD6734;
+transform: translateY(-3px);
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+cursor: pointer;
+}
+
+/*----------------TABLE----------------*/
+table{
+width: 100%;
+margin-top: 20px;
+color: #0F2F76;
+border-color: #DBD9D9;
+}
+
+/*----------------BOT----------------*/
+#des{
+font-size: 20pt;
+color: #0F2F76;	
+margin: 0px;	
+display: block;
+background-color: #81D8D0;
+line-height: 50px;
+text-align: center; 
+border-radius: 10px;
+}
+#detail-describe p{
+font-size: 13pt;
+color: #0F2F76;		
+}
+

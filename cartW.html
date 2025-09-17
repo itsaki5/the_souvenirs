@@ -1,0 +1,266 @@
+<html>
+	<head>
+		<title>Giỏ hàng-The Souvenirs</title>
+		<meta charset= "utf-8" />
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		<link rel= "stylesheet" type= "text/css" href= "css/style.css" />
+		<link rel= "stylesheet" type= "text/css" href= "css/rwd.css" />
+		<meta name= "viewport" content= "width= device-width, initial-scale= 1.0" />
+	
+		<script src= "jquery-3.7.1.min.js"> </script>
+		
+		<script>
+			$(document).ready(function () { //đổ data ra html
+				function loadCart() {
+					var data = JSON.parse(localStorage.getItem("orderDetails") || "[]"); 
+
+					$("#cart").html('<img id="cart-photo" src="https://i.imgur.com/1WhvuDO.png"/> Giỏ hàng (' + data.length + ')'); 
+					
+					  // Nếu không có sản phẩm
+					if (data.length === 0) {
+						$("#content").html(`<div style="padding: 50px; text-align: center; color: #0F2F76;">
+							ÚI GIỎ HÀNG TRỐNG!!! QUẸO VÔ LỰA HÀNG ĐI TÌNH IU <3!!!
+						</div>`);
+						return; 
+					}
+					var content = "";
+					let sum = 0; //Tính tổng tiền
+
+					data.forEach((item, index) => {
+						sum += item.total;
+						content += `
+							<div class="order-item" data-index="${index}"> 
+								<div class="order-photo"><img src='${item.photo}' /></div>
+								<div class="order-name">${item.name}</div>
+								<div class="order-price">${item.price.toLocaleString()} VND</div>
+								
+								<div class="order-quantity">
+									<button class="btnMinus" title="-" ${item.quantity === 1 ? 'disabled' : ''}>-</button>
+									<span class="quantity-value">${item.quantity}</span>
+									<button class="btnPlus" title="+">+</button>
+								</div>
+								
+								<div class="order-total">${item.total.toLocaleString()} VND</div>
+								
+								<div class="order-action">
+									<button class="btnDelete" title="Xóa">
+										<img src="bin.png">
+									</button>
+
+								</div>
+							</div>`;
+					});
+
+					$("#content").html(content);
+					$(".order-bill").text(sum.toLocaleString() + " VND");
+				}
+
+
+				// Gọi hàm khi trang load
+				loadCart();
+
+				// Xử lý sự kiện xóa
+				$(document).on("click", ".btnDelete", function () {
+					if (confirm("Ủa không mua cái này nữa hả?")) {
+						var index = $(this).closest(".order-item").index(); // lấy vị trí sản phẩm trong danh sách
+						var data = JSON.parse(localStorage.getItem("orderDetails") || "[]"); //chuyển sang JSON
+
+						data.splice(index, 1); // xóa phần tử tại vị trí đó
+						localStorage.setItem("orderDetails", JSON.stringify(data));
+
+						// Cập nhật lại giao diện
+						location.reload(); // hoặc gọi lại hàm hiển thị giỏ hàng
+					}
+				});
+				// Xử lý sự kiện thêm/bớt số lượng				
+				$(document).on("click", ".btnPlus", function () {
+				  let index = $(this).closest(".order-item").data("index");
+				  let data = JSON.parse(localStorage.getItem("orderDetails") || "[]");
+
+				  data[index].quantity += 1;
+				  data[index].total = data[index].quantity * data[index].price;
+
+				  localStorage.setItem("orderDetails", JSON.stringify(data));
+				  loadCart();
+				});
+
+				$(document).on("click", ".btnMinus", function () {
+				  let index = $(this).closest(".order-item").data("index");
+				  let data = JSON.parse(localStorage.getItem("orderDetails") || "[]");
+
+				  if (data[index].quantity > 1) {
+					data[index].quantity -= 1;
+					data[index].total = data[index].quantity * data[index].price;
+
+					localStorage.setItem("orderDetails", JSON.stringify(data));
+					loadCart();
+				  } else {
+					if (confirm("Xóa sản phẩm này khỏi giỏ hàng?")) {
+					  data.splice(index, 1);
+					  localStorage.setItem("orderDetails", JSON.stringify(data));
+					  loadCart();
+					}
+				  }
+				});
+				
+			});
+		</script>
+
+		
+	</head>
+<!--
+header -> top, banner, menu
+container -> wrapper -> sidebar, slideshow
+footer
+-->	
+	<body>
+	
+<!----------------------HEADER---------------------->	
+		<div id = "header">
+<!--BEGIN TOP & BANNER-->
+			<div id = "top">
+				<div id="top-content" style = "width: 80%; margin: auto">	
+					<div id = "top-left" >							
+						<span><img src= "https://i.imgur.com/sybFkb4.png"/>Hotline: <b>0363.627.792</b> </span>
+						<span><img src= "https://i.imgur.com/fZe4Mke.png" /> Địa chỉ: Ngõ 155, đường Đỗ Thế Diên, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+					</div>	
+
+					<div id = "top-right">							
+						<span><img src= "https://i.imgur.com/3xLVFOO.png" /> <a href= "login.html"><b>Đăng nhập</b></a></span>
+					</div>	
+
+				</div>
+			</div>
+
+			<div id = "banner">
+				<div style= "width: 80%; height: 100%; margin: auto; position: relative;">
+					<a href= "index.html">
+						<div id= "logo">
+							<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> <br />	
+						</div>
+					</a>
+					<a href= "#footer">
+						<div id= "info">
+							<img src= "https://i.imgur.com/1v7x7Bq.png" alt= "info" /> <br />	
+						</div>				
+					</a>
+					<div>
+						<a id= "cart" href= "cartW.html"><img id= "cart-photo" src= "https://i.imgur.com/1WhvuDO.png"/> Giỏ hàng (0) </a>	
+					</div>
+				</div>
+			</div>				
+<!--END TOP & BANNER-->
+			
+<!--BEGIN MENU-->			
+			<div id = "menu">
+					<div style = "width: 80%; height: 100%; margin: auto">
+						<ul>
+							<li style = "float: left"><a href= "index.html" style = "background-color: #96FDF1; "> Trang chủ </a></li> <!-- padding: trên dưới-trái phải; trên-phải-dưới-trái-->
+							<li style = "float: left"><a href= "products.html" > Sản phẩm </a>
+								<ul >
+									<li><a href= "ca/ca1.html">Gấu bông & Mô hình</a></li>
+									<li><a href= "ca/ca2.html">Phụ kiện trang trí</a></li>
+									<li><a href= "ca/ca3.html">Đồ handmade</a></li>									
+									<li><a href= "ca/ca4.html">Khác</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "introduction.html"> Giới thiệu </a></li>
+							<li style = "float: left"><a href= "#footer"> Liên hệ </a>
+								<ul>
+									<li><a href= "#footer">Email</a></li>									
+									<li><a href= "#footer">Điện thoại</a></li>
+									<li><a href= "#footer">Fanpage</a></li>
+									<li><a href= "#footer">Facebook</a></li>
+									<li><a href= "#footer">Youtube</a></li>							
+								</ul>
+							</li>
+							<li style = "float: left"><a href= "#">Khuyến mại</a></li>
+						</ul>
+					</div>
+			</div>
+<!--END MENU-->				
+			
+		</div>
+		
+		
+<!----------------------CONTAINER---------------------->		
+		<div id = "container">	
+			<div id = "wrapper">
+				<div class= "col-m-12 col-x-12">
+					<div class= "link"> 
+						<h3><a href= "index.html">Trang chủ</a>/ <a href= "cartW.html"><b>Giỏ hàng của bạn</b></a></h3>
+					</div>	
+				</div>
+				
+				<div class= "order-header">
+					<div class= "order-photo">Sản phẩm</div>
+					<div class= "order-name">Thông tin sản phẩm</div>
+					<div class= "order-price">Đơn giá</div>
+					<div class= "order-quantity">Số lượng</div>
+					<div class= "order-total">Thành tiền</div>
+					<div class= "order-action">Xóa</div>
+				</div>
+				<div id= "content">
+					<!--Giỏ hàng-->
+					
+					
+				</div>
+				
+				<div class= "total">
+					<div class= "order-sum" style= "margin-left: 30px; ">Tổng tiền phải thanh toán</div>
+					<div class= "order-bill"></div>
+					<div class= "order-confirm">
+						<a href= "delivery.html" class= "btnOrder">Đặt hàng</a>
+					</div>
+				</div>	
+				
+<!--VỀ ĐẦU TRANG $V LIÊN HỆ-->
+				<div id= "back-top" title= "Về đầu trang">
+					<a href= "#top"> 
+						<img src= "https://i.imgur.com/YqSs2Rc.png" />
+					</a>				
+				</div>	
+				
+				<div id= "mess" title= "Liên hệ với chúng tôi qua Messenger!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/P0d8iOS.png" />
+					</a>				
+				</div>	
+				
+				<div id= "zalo" title= "Liên hệ với chúng tôi qua Zalo!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/0EnRJ4U.png" />
+					</a>				
+				</div>	
+				
+				<div id= "fb" title= "Liên hệ với chúng tôi qua Facebook!">
+					<a href= "#"> 
+						<img src= "https://i.imgur.com/hgLqXpI.png" />
+					</a>				
+				</div>			
+				
+			</div> <!--đóng wrapper-->
+		</div>
+		
+		
+<!----------------------FOOTER---------------------->
+		<div id= "footer">
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-info">
+					<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>					
+					<h3>Địa chỉ: Ngõ 155, Mỹ Hào 1, Mỹ Hào, Hưng Yên</h3>
+					<h3>Email: thesouvenirs@gmail.com</h3>
+					<h3>Điện thoại: 0363.627.792</h3>
+					<h3>Website: thesouvenirs.html</h3>
+					<h3>Fanpage: The Souvenirs</h3>
+					<h3>Youtube: The Souvenirs</h3>				
+				</div>
+			</div>
+			<div class= "col-s-12 col-m-6 col-x-6">
+				<div class= "footer-map"> 
+					<iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5627127100296!2d106.074047!3d20.942439!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2sus!4v1744664275551!5m2!1svi!2sus" style= "border: 0px; width: 100%; height: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

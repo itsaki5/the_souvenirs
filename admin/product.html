@@ -1,0 +1,242 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sản phẩm-Quản trị The Souvenirs</title>
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		
+		<!-- Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+		<link rel="stylesheet" href="style-admin.css">
+			
+		<script src= "../jquery-3.7.1.min.js"> </script>
+		<script src= "addProduct.js"></script>
+	</head>
+
+	<body>	
+		<div class="container"> <!--Grid 12 cột -->				
+			
+<!-------------BEGIN SIDEBAR------------->			
+			<div class="sidebar col-3"> <!--Chiếm 3 cột, ẩn trên mobile -->
+				<div class="logo">
+					<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> 
+				</div>
+				
+				<nav>
+					<a href="admin.html" class="menu-item" style= "background-color: #81D8D0; "><i class="fas fa-home"></i> Tổng quan</a>
+					<a href="product.html" class="menu-item active"><i class="fas fa-shopping-cart"></i> Sản phẩm</a>
+					<a href="order.html" class="menu-item"><i class="fas fa-file"></i> Đơn hàng</a>
+					<a href="inventory.html" class="menu-item"><i class="fas fa-box"></i>Kho hàng</a>
+				</nav>
+			</div>
+<!-------------END SIDEBAR------------->			
+			
+			<div class="main col-9"> <!--Chiếm 9 cột trên desktop, full trên mobile -->
+
+<!-------------BEGIN HEADER------------->				
+				<div class="header">					
+					<div class="flex header-left">
+						<button class="btnExtend"><i class="fas fa-bars"></i></button>
+						<div class="page-title">SẢN PHẨM</div>
+					</div>
+					
+					<div class="header-right">
+						<button class="btnSearch" title= "Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+						
+						<input class="search" type="text" placeholder="Tìm kiếm..." />
+						
+						<div class="notification">
+							<i class="fas fa-bell"></i>
+							<span class="badge">3</span>
+						</div>
+					</div>
+				</div>
+<!-------------END HEADER------------->	
+
+<!-------------BEGIN TABLE------------->
+				<div class="card table-card">
+					<div class="flex mb-4">
+						<h2>Quản lý sản phẩm</h2>
+						
+						<button class="btn-add">
+							<i class="fas fa-plus"></i> Thêm sản phẩm
+						</button>
+					</div>
+					
+					<table id="product-table">
+						<thead>
+							<tr>
+								<th>Mã</th>
+								<th>Tên</th>
+								<th>Nhóm</th>
+								<th>Giá (VND)</th>
+								<th>Ảnh</th>
+								<th>Thao tác</th>
+							</tr>
+						</thead>
+						
+						<tbody id="product-table-body">
+							<!--Sản phẩm-->
+						
+						
+						</tbody>
+					</table>
+				</div>
+<!-------------END TABLE------------->	
+				
+<!-------------BEGIN MODAL------------->	
+				<div class="modal" id="product-modal">					
+					
+					<div class="modal-content">
+						<h3 id="modal-title">Thêm sản phẩm</h3>
+						
+						<form id="product-form">
+							<div class="form-group">
+								<label>Tên sản phẩm</label>
+								<input type="text" id="product-name" required>
+							</div>
+							
+							<div class="form-group">
+								<label>Danh mục</label>
+								
+								<select id="product-category" required>
+								<option value="gb">Gấu bông</option>
+								<option value="mh">Mô hình</option>
+								<option value="vt">Vòng tay</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<label>Giá (VND)</label>
+								<input type="number" id="product-price" min="0" required>
+							</div>
+							
+							<div class="form-group">
+								<label>Ảnh sản phẩm</label>
+								<input type="file" id="product-image" accept="image/*">
+								<img id="image-preview" src="" alt="Preview" style="display: none; max-width: 100px; margin-top: 8px;">
+							</div>
+							
+							<div class="form-group">
+								<label>Mô tả</label>
+								<textarea id="product-description" ></textarea>
+							</div>
+							
+							<input type="hidden" id="product-id">
+							
+							<div class="form-actions">
+								<button type="button" class="btn-cancel" onclick="closeModal()">Hủy</button>
+								<button type= "button" class="btn-save">Lưu</button>
+							</div>
+						</form>	
+						
+					</div>				
+				</div>
+<!-------------END MODAL------------->	
+
+
+<!-------------BEGIN MODAL DETAIL------------->
+				<div id="info-modal" class="modal" >
+					<div class="modal-content" style="min-width: 1000px; ">
+						<h3>Thông tin mô tả sản phẩm</h3>
+						<table id= "detail" border="none" cellspacing="0" cellpadding="5" style="width: 100%; margin-top: 10px;">
+							<tr>
+								<th style="width: 40%;">THÔNG TIN</th>
+								<th>MÔ TẢ CHI TIẾT</th>
+							</tr>
+							<tr>
+								<td>Tên hàng hóa</td>
+								<td><input type="text" class="detail" id= "detail-name" required></td>
+							</tr>
+							<tr>
+								<td>Thành phần</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Thông số kỹ thuật</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Hướng dẫn sử dụng</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Thông tin cảnh báo</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Hướng dẫn bảo quản</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Năm sản xuất</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+							<tr>
+								<td>Hạn sử dụng</td>
+								<td><input type="text" class="detail" required></td>
+							</tr>
+						</table>
+						
+						<div class="col-m-12 col-x-12" style="margin-top: 20px;">
+							<label for="custom-description" style="font-weight: bold;">Ghi chú / Mô tả thêm:</label>
+							<textarea id="custom-description" rows="5" placeholder="Nhập mô tả bổ sung tại đây..." ></textarea>
+						</div>
+						
+						<div style="margin-top: 10px; text-align: right;">
+							<button onclick="closeInfoModal()" class="btn-cancel">Đóng</button>
+						</div>
+					</div>
+					
+				</div>
+<!-------------END MODAL DETAIL------------->	
+				<!-- <script>
+				// Hàm tạo phần tử sản phẩm
+				function createProductElement(product) {
+					const div = document.createElement("div");
+					div.className = "product";
+
+					div.innerHTML = `
+						<a href="#"><img class="product-photo" src="${product.image}" /></a><br />
+						<a href="#"><span class="product-name">${product.name}</span></a><br />
+						<span class="product-sale">${product.sale}</span><br />
+						<span class="product-price"><s>${product.price}</s></span><br />
+						<input class="btnAdd" type="button" value="Thêm vào giỏ hàng" />
+					`;
+
+					// Gán sự kiện cho nút thêm giỏ hàng
+					const btnAdd = div.querySelector(".btnAdd");
+					btnAdd.addEventListener("click", function() {
+						alert(`Đã thêm ${product.name} vào giỏ hàng!`);
+						// Có thể thêm vào localStorage hoặc array cart ở đây
+					});
+
+					return div;
+				}
+
+				// Hàm load sản phẩm từ localStorage
+				function loadProducts() {
+					const productList = document.getElementById("product-list");
+
+					// Lấy danh sách sản phẩm từ localStorage
+					const products = JSON.parse(localStorage.getItem("products")) || [];
+
+					// Duyệt qua danh sách sản phẩm và tạo phần tử cho từng sản phẩm
+					products.forEach(product => {
+						const productElement = createProductElement(product);
+						productList.appendChild(productElement);
+					});
+				}
+
+				// Hiển thị sản phẩm khi trang tải
+				document.addEventListener("DOMContentLoaded", function () {
+					loadProducts();
+				});
+
+				</script> -->
+			</div>
+		</div>
+	</body>
+</html>

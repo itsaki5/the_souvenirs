@@ -1,0 +1,163 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Đơn hàng-Quản trị The Souvenirs</title>
+		<link rel= "icon" type= "image/png" href= "https://i.imgur.com/YrnZZIN.png" />
+		
+		<!-- Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+		<link rel="stylesheet" href="style-admin.css">
+		
+		<style>   <!--Modal ẩn-->
+			.modal {
+				display: none;
+				position: fixed;
+				top: 0; left: 0;
+				width: 100vw; height: 100vh;
+				justify-content: center;
+				align-items: center;
+				z-index: 999;
+			}
+
+			.modal-content {
+				background-color: #fff;
+				margin: 10% auto;
+				padding: 20px;
+				border-radius: 6px;
+				width: 90%;
+				max-width: 500px;
+				position: relative;
+			}
+
+			.close {
+				position: absolute;
+				top: 8px; right: 10px;
+				font-size: 25px;
+				cursor: pointer;
+			}
+
+			#btnComplete {
+				background-color: #28a745;
+				color: #fff;
+				padding: 8px 15px;
+				border: none;
+				border-radius: 4px;
+				margin-top: 10px;
+			}
+		</style>	
+		
+	</head>
+
+	<body>	
+		<div class="container"> <!--Grid 12 cột -->				
+			
+<!-------------BEGIN SIDEBAR------------->			
+			<div class="sidebar col-3"> <!--Chiếm 3 cột, ẩn trên mobile -->
+				<div class="logo">
+					<img src= "https://i.imgur.com/xCOF2Y0.png" alt= "logo" /> 
+				</div>
+				
+				<nav>
+					<a href="admin.html" class="menu-item" style= "background-color: #81D8D0; "><i class="fas fa-home"></i> Tổng quan</a>
+					<a href="product.html" class="menu-item"><i class="fas fa-shopping-cart"></i> Sản phẩm</a>
+					<a href="order.html" class="menu-item active"><i class="fas fa-file"></i> Đơn hàng</a>
+					<a href="inventory.html" class="menu-item"><i class="fas fa-box"></i>Kho hàng</a>
+				</nav>
+
+			</div>
+<!-------------END SIDEBAR------------->			
+			
+			<div class="main col-9"> <!--Chiếm 9 cột trên desktop, full trên mobile -->
+
+<!-------------BEGIN HEADER------------->				
+				<div class="header">					
+					<div class="flex header-left">
+						<button class="btnExtend"><i class="fas fa-bars"></i></button>
+						<div class="page-title">ĐƠN HÀNG</div>
+					</div>
+					
+					<div class="header-right">
+						<button class="btnSearch" title= "Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+						
+						<input class="search" type="text" placeholder="Tìm kiếm..." />
+						
+						<div class="notification">
+							<i class="fas fa-bell"></i>
+							<span class="badge">3</span>
+						</div>
+					</div>
+				</div>
+<!-------------END HEADER------------->	
+			
+				<div class="card table-card">
+					<h2>Danh sách đơn hàng</h2>
+					
+					<!-- Bộ lọc trạng thái -->
+					<div class="filter">
+						<label>Lọc theo trạng thái: </label>
+						
+						<select onchange="filterOrders(this.value)">
+							<option value="all">Tất cả</option>
+							<option value="pending">Đang xử lý</option>
+							<option value="done">Hoàn thành</option>
+						</select>
+					</div>
+					
+					<table>
+						<thead>
+							<tr>
+								<th>Mã đơn</th>
+								<th>Khách hàng</th>
+								<th>Tổng tiền</th>
+								<th>Trạng thái</th>
+								<th>Hành động</th>
+							</tr>
+						</thead>
+						
+						<tbody id="order-table-body">							
+							<!--Đơn hàng-->
+							
+							
+							
+						</tbody>
+					</table>
+				</div>
+				
+				<script src="order.js"></script>
+				
+				<div id="orderModal" class="modal">
+					<div class="modal-blur-bg"></div>
+					
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<h3>Chi tiết đơn hàng</h3>
+						
+						<div id="orderDetail">
+						
+						</div>
+						
+						<button id="btnComplete" class="btn-done">Hoàn tất đơn</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Lọc đơn hàng -->
+		<script>
+			function filterOrders(status) {
+				const rows = document.querySelectorAll('.order-row');
+				rows.forEach(row => {
+					if (status === 'all' || row.getAttribute('data-status') === status) {
+						row.style.display = '';
+					} else {
+						row.style.display = 'none';
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
