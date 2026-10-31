@@ -277,9 +277,14 @@ color: #DD6734;
 height: 40px;
 font-size: 13pt;
 margin: 0 5px;
+color: white;
+background-color: #DD6734;
+border-color: #DD6734;
+/*
 color: #0F2F76;
 background-color: #81D8D0;
 border-color: #81D8D0;
+*/
 border-radius: 7px;
 
 position: absolute;
