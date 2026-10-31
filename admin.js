@@ -13,20 +13,20 @@ document.querySelector(".btnLogin").addEventListener("click", function(e) {
 
     const validAdmin = storedAdmins.find(admin => admin.username === username && admin.password === password);
 
-    if (validAdmin) {
-        alert("Đăng nhập thành công!");
-        localStorage.setItem("isLoggedIn", "true"); 
-        window.location.href = "admin/admin.html";
-    } 
-	else if (username.length > 250) {
-		alert("Tên người nhận không được vượt quá 250 ký tự!")
+    if (username.length > 250) {
+    alert("Tên đăng nhập không được vượt quá 250 ký tự!");
 	}
 	else if (password.length > 250) {
-		alert("Tên người nhận không được vượt quá 250 ký tự!")
+		alert("Mật khẩu không được vượt quá 250 ký tự!");
+	}
+	else if (validAdmin) {
+		alert("Đăng nhập thành công!");
+		localStorage.setItem("isLoggedIn", "true");
+		window.location.href = "admin/admin.html";
 	}
 	else {
-        alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-    }
+		alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+	}
 });
 
 document.getElementById("fp").addEventListener("click", function(e) {
