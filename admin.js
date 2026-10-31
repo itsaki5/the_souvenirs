@@ -17,7 +17,14 @@ document.querySelector(".btnLogin").addEventListener("click", function(e) {
         alert("Đăng nhập thành công!");
         localStorage.setItem("isLoggedIn", "true"); 
         window.location.href = "admin/admin.html";
-    } else {
+    } 
+	else if (username.length > 250) {
+		alert("Tên người nhận không được vượt quá 250 ký tự!")
+	}
+	else if (password.length > 250) {
+		alert("Tên người nhận không được vượt quá 250 ký tự!")
+	}
+	else {
         alert("Tên đăng nhập hoặc mật khẩu không đúng!");
     }
 });
